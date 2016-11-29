@@ -1,0 +1,126 @@
+<div class="row">
+  <div class="col-lg">
+    <h4>Basic</h4>
+    <div class="card">
+      <div class="card-block">
+        <form>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label col-form-label-sm">Title</label>
+            <div class="col-sm-9">
+              <select class="form-control form-control-sm">
+                <option></option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="givenName" class="col-sm-3 col-form-label col-form-label-sm">First Name</label>
+            <div class="col-sm-9">
+              <input [(ngModel)]="patientDTO.givenName" name="givenName" id="givenName" placeholder="e.g. Harry"
+                     class="form-control form-control-sm"/>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="familyName" class="col-sm-3 col-form-label col-form-label-sm">Last Name</label>
+            <div class="col-sm-9">
+              <input [(ngModel)]="patientDTO.familyName" placeholder="e.g. Potter" id="familyName" name="familyName"
+                     class="form-control form-control-sm"/>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="middleNames" class="col-sm-3 col-form-label col-form-label-sm">Middle Name(s)</label>
+            <div class="col-sm-9">
+              <input name="middleNames" id="middleNames" placeholder="e.g. James"
+                     class="form-control form-control-sm"/>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="preferredName" class="col-sm-3 col-form-label col-form-label-sm">Preferred Name</label>
+            <div class="col-sm-9">
+              <input id="preferredName" name="preferredName" placeholder="e.g. Hazza"
+                     class="form-control form-control-sm"/>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label col-form-label-sm" for="gender">Gender</label>
+            <div class="col-sm-9">
+              <select id="gender" name="gender" class="form-control form-control-sm">
+                <option></option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label col-form-label-sm" for="birthday">Birthday</label>
+            <div class="col-sm-9">
+              <input id="birthday" name="birthday" class="form-control form-control-sm" type="text"/>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg">
+    <h4>Contact</h4>
+    <div class="card">
+      <div class="card-block">
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label col-form-label-sm">Mobile phone</label>
+          <div class="col-sm-9">
+            <input type="text" name="mobileNumber" id="mobileNumber" class="form-control form-control-sm"
+                   placeholder="e.g. 400 123 123"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label col-form-label-sm">Checkbox</label>
+          <div class="col-sm-9">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input form-check-input-sm" type="checkbox"> Check me out
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label col-form-label-sm">Home Phone</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control form-control-sm" placeholder="e.g. 9800 1234"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label col-form-label-sm">Work Phone</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control form-control-sm" placeholder="e.g. 9800 1234"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="preferredContact" class="col-sm-3 col-form-label col-form-label-sm">Preferred Contact</label>
+          <div class="col-sm-9">
+            <select id="preferredContact" name="preferredContact" class="form-control form-control-sm"></select>
+          </div>
+        </div>
+        <div class="row form-group">
+          <label class="col-sm-3 col-form-label col-form-label-sm">Email Address</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control form-control-sm" placeholder="e.g. harry@hogwarts.com.au"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label col-form-label-sm">Residential Address</label>
+          <div class="col-sm-9">
+            <input class="form-control form-control-sm" type="text"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label col-form-label-sm" for="postalAddress">Postal Address</label>
+          <div class="col-sm-9">
+            <input id="postalAddress" name="postalAddress" class="form-control form-control-sm" type="text"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <button type="submit" (click)="vm.savePatient()" class="btn btn-success">Save
+    </button>
+    <button class="btn btn-default" [routerLink]="['../']"> Cancel</button>
+  </div>
+</div>

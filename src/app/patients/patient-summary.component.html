@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-lg-5 col-md-9 col-sm-9">
+    <div style="display:flex">
+      <h4 class="panel-title">Basic</h4>
+      <button class="btn btn-sm btn-link" style="margin-left:auto" routerLink="edit-basic">Edit</button>
+    </div>
+    <div class="card">
+      <div class="card-block">
+        <div>
+          <img class="icon-sm" src="../../assets/images/birthday-icon.svg"/>
+          <span class="summary-text">{{currentPatient?.birthDate | date: 'dd MMMM yyyy'}}</span>
+          <span class="summary-text" *ngIf="currentPatient?.age">({{currentPatient?.age}})</span>
+          <img *ngIf="currentPatient?.gender === 'Male'" class="icon-sm" src="../../assets/images/male-icon.svg"/>
+          <img *ngIf="currentPatient?.gender === 'Female'" class="icon-sm" src="../../assets/images/female-icon.svg"/>
+          <img *ngIf="currentPatient?.gender === 'Unknown'" class="icon-sm" src="../../assets/images/unknown-gender-icon.svg"/>
+          <span>{{currentPatient?.gender}}</span>
+          <span class="summary-text"></span>
+        </div>
+        <div>
+          <img *ngIf="currentPatient?.mobileNumbers?.length > 0" class="icon-sm"
+               src="../../assets/images/mobile-phone-icon.svg"/>
+          <span *ngIf="currentPatient?.mobileNumbers?.length > 0" class="summary-text">{{currentPatient?.mobileNumbers[0]?.value}}</span>
+
+          <img *ngIf="currentPatient?.homeNumbers?.length > 0" class="icon-sm"
+               src="../../assets/images/home-phone-icon.svg"/>
+          <span *ngIf="currentPatient?.homeNumbers?.length > 0" class="summary-text"></span>
+
+          <img *ngIf="currentPatient?.workNumbers?.length > 0" class="icon-sm"
+               src="../../assets/images/work-phone-icon.svg"/>
+          <span *ngIf="currentPatient?.workNumbers?.length > 0" class="summary-text">{{currentPatient?.workNumbers[0]?.value}}</span>
+        </div>
+        <div>
+          <img class="icon-sm" src="../../assets/images/home-icon.svg"/>
+          <span class="summary-text"></span>
+        </div>
+        <div>
+          <img class="icon-sm" src="../../assets/images/email-icon.svg"/>
+          <span class="summary-text"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-5">
+    <div style="display:flex">
+      <h4 class="panel-title">Comorbidities</h4>
+      <button class="btn btn-sm btn-link" style="margin-left:auto" routerLink="edit-basic">Edit</button>
+    </div>
+    <div class="card">
+      <div class="card-block">
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-5">
+    <div style="display:flex">
+      <h4 class="panel-title">Medications</h4>
+      <button class="btn btn-sm btn-link" style="margin-left:auto" routerLink="edit-basic">Edit</button>
+    </div>
+    <div class="card">
+      <div class="card-block">
+        <div>
+          <span>Aspirin</span><span style="color:lightgray">100mg daily orally</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

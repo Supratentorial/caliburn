@@ -1,0 +1,6 @@
+<div class="tab-item" *ngFor="let patient of openPatients" [routerLink]="['/patients', patient.id]">
+  <span>{{patient.givenName}} {{patient.familyName}}</span>
+  <button type="button" class="close" aria-label="Close" (click)="closePatient($event, patient.id)">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>

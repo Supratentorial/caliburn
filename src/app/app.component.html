@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+<nav class="navbar navbar-dark navbar-fixed-top">
+  <a class="navbar-brand" href="#">Sidonia</a>
+
+  <div class="nav navbar-nav">
+    <a class="nav-item nav-link" routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+    <a class="nav-item nav-link" routerLink="patients" routerLinkActive="active">Patients</a>
+    <a class="nav-item nav-link" routerLink="appointments" routerLinkActive="active">Appointments</a>
+    <a class="nav-item nav-link" routerLink="settings" routerLinkActive="active">Settings</a>
+    <form class="form-inline pull-xs-right">
+      <patient-search-typeahead></patient-search-typeahead>
+    </form>
+  </div>
+</nav>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,44 @@
+@import "_colors.scss";
+
+.banner {
+  margin-left: -15px;
+  margin-right: -15px;
+  align-items: flex-start;
+  flex-direction: row;
+  display: flex;
+  background: $white;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  border: 1px solid $md-blue-grey-100;
+
+  h4 {
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: 40px;
+  }
+
+  label {
+    font-size: 16px;
+    color: $md-grey-500;
+    display: inline;
+    font-weight: 100;
+    margin-right: 0.2em;
+  }
+
+  .patient-profile-picture{
+    width: 85px;
+    height: 85px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    margin-right: 10px;
+    border: 0 solid $md-blue-grey-100;
+    border-right-width: 1px;
+    border-radius: 0;
+  }
+
+  .vertical-divider {
+    border-right: solid 1px $md-blue-grey-100;
+    height: 85px;
+    margin: -5px 10px;
+  }
+}

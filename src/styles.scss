@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/styles/_variables.scss';
+@import './assets/styles/_colors.scss';
+@import './assets/styles/_banner.scss';
+@import './assets/styles/_tab-item.scss';
+@import './assets/styles/_icons.scss';
+@import './assets/styles/_fonts.scss';
+@import './assets/styles/_list-groups';
+@import './assets/styles/_navbar';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+body {
+  background-color: $md-blue-grey-50;
+  padding-top: 60px;
+}
+
+.footer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  background: $md-blue-grey-400;
+}

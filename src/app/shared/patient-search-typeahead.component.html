@@ -1,0 +1,13 @@
+<template #resultTemplate let-r="result" let-t="term">
+  <div>
+    <div>
+      {{r.givenName}} {{r.familyName}}
+    </div>
+    <div>
+      {{r.birthDate | date: 'dd/MM/yyyy'}}
+    </div>
+  </div>
+</template>
+
+<input type="text" class="form-control" [resultTemplate]="resultTemplate" (selectItem)="onSelect($event); input.value='' "
+       [ngModel]="selectedPatient" #input placeholder="Start typing a patient name..." [ngbTypeahead]="search"/>
