@@ -11,11 +11,13 @@ import {PatientHomeComponent} from './patient-home.component';
 import {OpenPatientsComponent} from './open-patients.component';
 import {PatientSummaryComponent} from './patient-summary.component';
 import {PatientDemographicsComponent} from './patient-demographics.component';
+import {InlineSVGModule} from "ng-inline-svg";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [PatientShellComponent, PatientBannerComponent, PatientHomeComponent, OpenPatientsComponent, PatientSummaryComponent, PatientDemographicsComponent],
   exports: [PatientShellComponent, PatientBannerComponent],
-  imports: [CommonModule, FormsModule, patientRouting],
+  imports: [CommonModule, FormsModule, patientRouting, InlineSVGModule, NgbModule],
   providers: []
 })
 

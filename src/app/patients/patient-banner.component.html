@@ -1,43 +1,41 @@
-<div class="banner">
+<img class="patient-profile-picture" src="../../assets/images/user-icon.svg"/>
+<div>
+  <h4>{{currentPatient?.title}} {{currentPatient?.givenName}} {{currentPatient?.familyName}}</h4>
 
-  <img class="patient-profile-picture" src="../../assets/images/user-icon.svg"/>
   <div>
-    <h4>{{currentPatient?.title}} {{currentPatient?.givenName}} {{currentPatient?.familyName}}</h4>
-
-    <div>
-      <img class="icon-sm" src="../../assets/images/birthday-icon.svg"/>
-      <a>{{currentPatient?.birthDate | date: 'dd MMMM yyyy'}}</a>
-      <span *ngIf="currentPatient?.age">({{currentPatient?.age}})</span>
-      <img class="icon-sm" *ngIf="currentPatient?.gender === 'Male'" src="../../assets/images/male-icon.svg"/>
-      <img class="icon-sm" *ngIf="currentPatient?.gender ==='Female'" src="../../assets/images/female-icon.svg"/>
-      <img class="icon-sm" *ngIf="currentPatient?.gender ==='Unknown'" src="../../assets/images/unknown-gender-icon.svg"/>
-      <a>{{currentPatient?.gender}}</a>
-    </div>
+    <img class="icon-sm" src="../../assets/images/birthday-icon.svg"/>
+    <a>{{currentPatient?.birthDate | date: 'dd MMMM yyyy'}}</a>
+    <span *ngIf="currentPatient?.age">({{currentPatient?.age}})</span>
+    <img class="icon-sm" *ngIf="currentPatient?.gender === 'Male'" src="../../assets/images/male-icon.svg"/>
+    <img class="icon-sm" *ngIf="currentPatient?.gender ==='Female'" src="../../assets/images/female-icon.svg"/>
+    <img class="icon-sm" *ngIf="currentPatient?.gender ==='Unknown'" src="../../assets/images/unknown-gender-icon.svg"/>
+    <a>{{currentPatient?.gender}}</a>
   </div>
-  <div class="vertical-divider"></div>
-  <div>
-    <div *ngIf="currentPatient?.mobileNumbers?.length === 0">
-      <img class="icon-sm" src="../../assets/images/mobile-phone-icon.svg"/>
-      <a></a>
-    </div>
-    <div>
-      <img class="icon-sm" src="../../assets/images/home-icon.svg"/>
-      <a></a>
-    </div>
-  </div>
-  <div class="vertical-divider"></div>
-  <div>
-    <div>
-      <img class="icon-sm" src="../../assets/images/current-smoker-icon.svg"/>
-      <img class="icon-sm" src="../../assets/images/ex-smoker-icon.svg"/>
-      <img class="icon-sm" src="../../assets/images/never-smoked-icon.svg"/>
-      <a></a>
-    </div>
-    <div>
-      <img class="icon-sm" src="../../assets/images/no-alcohol-icon.svg"/>
-      <img class="icon-sm" src="../../assets/images/heavy-alcohol-icon.svg"/>
-      <a class="content"></a>
-    </div>
-  </div>
-  <div class="vertical-divider"></div>
 </div>
+<div class="vertical-divider"></div>
+<div>
+  <div *ngIf="currentPatient?.mobileNumbers?.length === 0">
+    <img class="icon-sm" src="../../assets/images/mobile-phone-icon.svg"/>
+    <a></a>
+  </div>
+  <div>
+    <img class="icon-sm" src="../../assets/images/home-icon.svg"/>
+    <a></a>
+  </div>
+</div>
+<div class="vertical-divider"></div>
+<div>
+  <div>
+    <img class="icon-sm" src="../../assets/images/current-smoker-icon.svg"/>
+    <img class="icon-sm" src="../../assets/images/ex-smoker-icon.svg"/>
+    <img class="icon-sm" src="../../assets/images/never-smoked-icon.svg"/>
+    <a></a>
+  </div>
+  <div>
+    <img class="icon-sm" src="../../assets/images/no-alcohol-icon.svg"/>
+    <img class="icon-sm" src="../../assets/images/heavy-alcohol-icon.svg"/>
+    <a class="content"></a>
+  </div>
+</div>
+<div class="vertical-divider"></div>
+

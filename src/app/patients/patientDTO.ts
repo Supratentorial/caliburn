@@ -12,7 +12,7 @@ export class PatientDTO{
   birthDate: string;
   age: string;
   gender: string;
-  homeNumbers: Array<string>;
+  homeNumbers: Array<ContactPoint>;
   workNumbers: Array<ContactPoint>;
   mobileNumbers: Array<ContactPoint>;
   emailAddresses: Array<ContactPoint>;

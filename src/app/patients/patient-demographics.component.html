@@ -43,15 +43,16 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label col-form-label-sm" for="gender">Gender</label>
             <div class="col-sm-9">
-              <select id="gender" name="gender" class="form-control form-control-sm">
-                <option></option>
+              <select [(ngModel)]="patientDTO.gender" id="gender" name="gender" class="form-control form-control-sm">
+                <option>Male</option>
+                <option>Female</option>
               </select>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label col-form-label-sm" for="birthday">Birthday</label>
             <div class="col-sm-9">
-              <input id="birthday" name="birthday" class="form-control form-control-sm" type="text"/>
+              <input id="birthday"[(ngModel)]="patientDTO.birthDate" name="birthday" class="form-control form-control-sm" type="text"/>
             </div>
           </div>
         </form>

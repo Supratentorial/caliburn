@@ -15,7 +15,7 @@ import ContactPoint = fhir.ContactPoint;
 @Injectable()
 export class PatientService {
 
-  private patientsUrl = 'http://fhirtest.uhn.ca/baseDstu2/Patient';
+  private patientsUrl = 'http://52.72.172.54:8080/fhir/baseDstu2/Patient';
 
   constructor(private http: Http) {
 
@@ -45,9 +45,10 @@ export class PatientService {
     patientDTO.birthDate = patient.birthDate;
     patientDTO.age = PatientService.getAgeString(patient.birthDate);
     patientDTO.gender = _.capitalize(patient.gender);
-    patientDTO.workNumbers = _.filter(patient.telecom, (object : ContactPoint) => object.use === 'work');
-    patientDTO.mobileNumbers = _.filter(patient.telecom, (object: ContactPoint) => object.use === 'mobile');
-    patientDTO.emailAddresses = _.filter(patient.telecom, (object :ContactPoint) => object.use === 'email');
+    patientDTO.workNumbers = _.filter(patient.telecom, (object: ContactPoint) => object.use === 'work' && object.system === 'phone');
+    patientDTO.mobileNumbers = _.filter(patient.telecom, (object: ContactPoint) => object.use === 'mobile' && object.system === 'phone');
+    patientDTO.homeNumbers = _.filter(patient.telecom, (object: ContactPoint) => object.use === 'home' && object.system === 'phone');
+    patientDTO.emailAddresses = _.filter(patient.telecom, (object: ContactPoint) => object.system === 'email');
     return patientDTO;
   }
 
@@ -79,8 +80,8 @@ export class PatientService {
     }
     let results: Array<PatientDTO> = [];
     for (let i = 0; i < body.entry.length; i++) {
-      let patient : Patient;
-      if(body.entry[i].resource){
+      let patient: Patient;
+      if (body.entry[i].resource) {
         patient = body.entry[i].resource;
       }
 

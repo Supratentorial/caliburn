@@ -15,6 +15,7 @@ import {AppointmentsService} from "./appointments/appointments.service";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 import {AppComponent} from './app.component';
+import {InlineSVGModule} from "ng-inline-svg";
 
 @NgModule({
   declarations: [AppComponent],

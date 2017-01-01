@@ -6,17 +6,53 @@
     width: 25px;
   }
 
-  .primary-detail{
+  .primary-detail {
     font-size: 18px;
   }
 
-  .secondary-detail{
+  .secondary-detail {
     color: $md-blue-grey-300;
   }
 }
 
-.navigation-item{
+.navigation-item {
   background: white;
   padding: 5px 15px !important;
   border: solid 1px $md-blue-grey-100;
 }
+
+.vertical-nav-container {
+  background-color: $white;
+  border: solid 1px $md-blue-grey-100;
+  display: flex;
+  flex-direction:
+    column;
+  width: 50px;
+  :first-child {
+    margin-top: 0;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.vertical-nav-icon {
+  width: 48px;
+  padding: 12px;
+  background-color: $white;
+  &:hover{
+    background-color: $md-blue-900;
+    color: $white;
+  }
+
+  svg {
+    fill: currentColor;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+}
+
+
