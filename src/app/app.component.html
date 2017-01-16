@@ -1,14 +1,18 @@
-<nav class="navbar navbar-dark navbar-fixed-top">
+<nav class="navbar navbar-inverse bg-inverse fixed-top navbar-toggleable-md">
   <a class="navbar-brand" href="#">Sidonia</a>
-
-  <div class="nav navbar-nav">
-    <a class="nav-item nav-link" routerLink="dashboard" routerLinkActive="active">Dashboard</a>
-    <a class="nav-item nav-link" routerLink="patients" routerLinkActive="active">Patients</a>
-    <a class="nav-item nav-link" routerLink="appointments" routerLinkActive="active">Appointments</a>
-    <a class="nav-item nav-link" routerLink="settings" routerLinkActive="active">Settings</a>
-    <form class="form-inline pull-xs-right">
-      <patient-search-typeahead></patient-search-typeahead>
-    </form>
+  <button class="navbar-toggler" type="button" (click)="collapse()">
+    &#9776;
+  </button>
+  <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse">
+    <div class="nav navbar-nav mr-auto">
+      <a class="nav-item nav-link" routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+      <a class="nav-item nav-link" routerLink="patients" routerLinkActive="active">Patients</a>
+      <a class="nav-item nav-link" routerLink="appointments" routerLinkActive="active">Appointments</a>
+      <a class="nav-item nav-link" routerLink="settings" routerLinkActive="active">Settings</a>
+      <form class="form-inline pull-xs-right">
+        <patient-search-typeahead></patient-search-typeahead>
+      </form>
+    </div>
   </div>
 </nav>
 <div class="container-fluid">

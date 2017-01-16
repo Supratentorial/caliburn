@@ -13,9 +13,11 @@ import {PatientSummaryComponent} from './patient-summary.component';
 import {PatientDemographicsComponent} from './patient-demographics.component';
 import {InlineSVGModule} from "ng-inline-svg";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { PatientImmunisationsComponent } from './patient-immunisations/patient-immunisations.component';
+import { PatientVitalsComponent } from './patient-vitals/patient-vitals.component';
 
 @NgModule({
-  declarations: [PatientShellComponent, PatientBannerComponent, PatientHomeComponent, OpenPatientsComponent, PatientSummaryComponent, PatientDemographicsComponent],
+  declarations: [PatientShellComponent, PatientBannerComponent, PatientHomeComponent, OpenPatientsComponent, PatientSummaryComponent, PatientDemographicsComponent, PatientImmunisationsComponent, PatientVitalsComponent],
   exports: [PatientShellComponent, PatientBannerComponent],
   imports: [CommonModule, FormsModule, patientRouting, InlineSVGModule, NgbModule],
   providers: []

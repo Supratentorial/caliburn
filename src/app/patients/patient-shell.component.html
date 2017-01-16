@@ -1,15 +1,21 @@
 <open-patients class="open-patients"></open-patients>
 <patient-banner class="banner"></patient-banner>
-<div style="display: flex; flex-direction: row">
-  <div class="vertical-nav-container">
-    <div placement="right" ngbTooltip="Patient Summary" class="vertical-nav-icon" [removeSVGAttributes]="['fill']"
-         [inlineSVG]="'../../assets/images/summary-icon.svg'"></div>
-    <div placement="right" ngbTooltip="Immunisations" class="vertical-nav-icon" [removeSVGAttributes]="['fill']"
-         [inlineSVG]="'../../assets/images/immunisation-icon.svg'"></div>
-    <div placement="right" ngbTooltip="Pathology" class="vertical-nav-icon" [removeSVGAttributes]="['fill']"
-         [inlineSVG]="'../../assets/images/investigations-icon.svg'"></div>
-    <div placement="right" ngbTooltip="Radiology" class="vertical-nav-icon" [removeSVGAttributes]="['fill']"
-         [inlineSVG]="'../../assets/images/radiology-icon.svg'"></div>
+<div class="row">
+  <div class="col-lg-1" style="flex: 0 0 20px; padding-right: 0px">
+    <div class="vertical-nav-container">
+      <div placement="right" ngbTooltip="Summary" class="vertical-nav-icon" [removeSVGAttributes]="['fill']"
+           [inlineSVG]="'../../assets/images/summary-icon.svg'" [routerLink]="['summary-view']"></div>
+      <div placement="right" ngbTooltip="Immunisations" class="vertical-nav-icon" [removeSVGAttributes]="['fill']"
+           [inlineSVG]="'../../assets/images/immunisation-icon.svg'" [routerLink]="['immunisations-view']"></div>
+      <div placement="right" ngbTooltip="Pathology" class="vertical-nav-icon" [removeSVGAttributes]="['fill']"
+           [inlineSVG]="'../../assets/images/investigations-icon.svg'"></div>
+      <div placement="right" ngbTooltip="Radiology" class="vertical-nav-icon" [removeSVGAttributes]="['fill']"
+           [inlineSVG]="'../../assets/images/radiology-icon.svg'"></div>
+      <div placement="right" ngbTooltip="Vitals" class="vertical-nav-icon" [removeSVGAttributes]="['fill']"
+           [inlineSVG]="'../../assets/images/observation-icon.svg'"></div>
+    </div>
   </div>
-  <router-outlet></router-outlet>
+  <div class="col-lg-12" style="flex: 1">
+    <router-outlet></router-outlet>
+  </div>
 </div>

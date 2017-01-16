@@ -1,0 +1,89 @@
+@import "colors";
+
+$formPadding: 1px 6px;;
+
+$inputTop: 1.2em;
+
+$fontSizeForm: 1em;
+$fontSizeLabel: 0.7em;
+
+$labelTextColor: $md-blue-800;
+$placeHolderColor: $md-blue-grey-300;
+
+$animations: labelIn, labelOut;
+$animationTime: 0.35s;
+$ease: cubic-bezier(0.770, 0.00, 0.175, 1.000);
+
+.floating-container {
+  position: relative;
+  border: 1px solid $md-blue-grey-50;
+  height: 2.8em;
+
+  :focus{
+    border-bottom: 1px solid $labelTextColor;
+  }
+
+  fieldset {
+    display: block;
+  }
+
+  input {
+    display: block;
+    position: absolute;
+    border: none;
+    padding: $formPadding;
+    font-size: $fontSizeForm;
+    border-radius: 0;
+    outline: none;
+    top: 1.2em;
+    box-sizing: border-box;
+
+    width: 100%;
+  }
+
+  label {
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    margin-top: 2px;
+    padding: $formPadding;
+    font-size: $fontSizeForm;
+    color: $placeHolderColor;
+    animation-name: nth($animations, 1);
+    animation-duration: $animationTime;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+    animation-timing-function: $ease;
+  }
+
+  input:focus + label , input:valid + label {
+    animation-name: nth($animations, 2);
+    animation-duration: $animationTime;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: $ease;
+  }
+
+}
+
+@each $animationName in $animations {
+  @keyframes #{$animationName} {
+    0% {
+      opacity: 1;
+      top: $inputTop;
+      font-size: $fontSizeForm;
+    }
+    50.01% {
+      opacity: 0;
+      font-size: $fontSizeLabel;
+      color: $labelTextColor;
+    }
+    100% {
+      font-size: $fontSizeLabel;
+      top: 0.2em;
+      color: $labelTextColor;
+      opacity: 1;
+      font-weight: 500;
+    }
+  }
+}
