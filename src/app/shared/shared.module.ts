@@ -7,11 +7,12 @@ import {PatientSearchTypeaheadComponent} from './patient-search-typeahead.compon
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FloatingLabelDirective } from './floating-label.directive';
 
 @NgModule({
-  declarations: [PatientSearchTypeaheadComponent],
+  declarations: [PatientSearchTypeaheadComponent, FloatingLabelDirective],
   imports: [CommonModule, FormsModule, NgbModule, RouterModule],
-  exports: [PatientSearchTypeaheadComponent],
+  exports: [PatientSearchTypeaheadComponent, FloatingLabelDirective],
   providers: []
 })
 

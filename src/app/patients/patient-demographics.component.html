@@ -11,7 +11,15 @@
       <div class="card-block" style="padding: 0">
         <form>
           <fieldset id="basic-details">
-            <div class="row no no-gutters">
+            <div class="row no-gutters">
+              <div class="floating-container col-lg">
+                <select id="title">
+                  <option value="" hidden selected disabled>Title</option>
+                  <option>Mr</option>
+                  <option>Mrs</option>
+                </select>
+                <label for="title">Title</label>
+              </div>
               <div class="floating-container col-lg">
                 <input [(ngModel)]="patientDTO.givenName" type="text" name="given-name" id="given-name" required>
                 <label for="given-name">Given Name</label>
@@ -30,8 +38,8 @@
                 <input id="preferredName" name="preferredName" required/>
                 <label for="preferredName">Preferred Name</label>
               </div>
-              <div class="floating-container col-lg">
-                <input id="birthday" [(ngModel)]="patientDTO.birthDate" name="birthday" type="text" required>
+              <div appFloatingLabel class="floating-container col-lg">
+                <input id="birthday" [ngModel]="patientDTO.birthDate" name="birthday" type="text" required>
                 <label for="birthday">Birthday</label>
               </div>
             </div>
@@ -41,72 +49,45 @@
     </div>
   </div>
   <div class="col-lg">
-    <h4>Contact</h4>
-    <label class="sr-only" for="gender">Gender</label>
-
-    <select [(ngModel)]="patientDTO.gender" id="gender" name="gender" class="form-control">
-      <option value="" hidden selected disabled>Gender</option>
-      <option>Male</option>
-      <option>Female</option>
-    </select>
-    <label class="sr-only" for="title">Title</label>
-    <select class="form-control mr-4" id="title">
-      <option value="" hidden selected disabled>Title</option>
-    </select>
     <div class="card">
-      <div class="card-block">
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label col-form-label-sm">Mobile phone</label>
-          <div class="col-sm-9">
-            <input type="text" name="mobileNumber" id="mobileNumber" class="form-control"
-                   placeholder="e.g. 400 123 123"/>
+      <div class="card-block" style="padding: 0">
+        <label class="sr-only" for="gender">Gender</label>
+        <div class="floating-container">
+          <select id="gender" name="gender" required>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+          <label>Gender</label>
+        </div>
+        <div class="row no-gutters">
+          <div class="floating-container col-lg">
+            <input type="text" name="mobileNumber" id="mobileNumber" required/>
+            <label>Mobile phone</label>
+          </div>
+          <div class="floating-container col-lg">
+            <input type="text" required/>
+            <label>Home Phone</label>
+          </div>
+          <div class="floating-container col-lg">
+            <input type="text" required/>
+            <label>Work Phone</label>
           </div>
         </div>
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label col-form-label-sm">Checkbox</label>
-          <div class="col-sm-9">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input form-check-input-sm" type="checkbox"> Check me out
-              </label>
-            </div>
-          </div>
+        <div class="floating-container">
+          <select id="preferredContact" name="preferredContact" required></select>
+          <label for="preferredContact">Preferred Contact</label>
         </div>
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label col-form-label-sm">Home Phone</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" placeholder="e.g. 9800 1234"/>
-          </div>
+        <div class="floating-container">
+          <input type="email" required/>
+          <label>Email Address</label>
         </div>
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label col-form-label-sm">Work Phone</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" placeholder="e.g. 9800 1234"/>
-          </div>
+        <div class="floating-container">
+          <input type="text" required/>
+          <label>Residential Address</label>
         </div>
-        <div class="form-group row">
-          <label for="preferredContact" class="col-sm-3 col-form-label col-form-label-sm">Preferred Contact</label>
-          <div class="col-sm-9">
-            <select id="preferredContact" name="preferredContact" class="form-control"></select>
-          </div>
-        </div>
-        <div class="row form-group">
-          <label class="col-sm-3 col-form-label col-form-label-sm">Email Address</label>
-          <div class="col-sm-9">
-            <input type="email" class="form-control" placeholder="e.g. harry@hogwarts.com.au"/>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label col-form-label-sm">Residential Address</label>
-          <div class="col-sm-9">
-            <input class="form-control" type="text"/>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label col-form-label-sm" for="postalAddress">Postal Address</label>
-          <div class="col-sm-9">
-            <input id="postalAddress" name="postalAddress" class="form-control" type="text"/>
-          </div>
+        <div class="floating-container">
+          <input id="postalAddress" name="postalAddress" type="text" required/>
+          <label for="postalAddress">Postal Address</label>
         </div>
       </div>
     </div>

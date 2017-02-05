@@ -1,6 +1,7 @@
 @import "colors";
 
-$formPadding: 1px 6px;;
+$formPadding: 1px 6px;
+;
 
 $inputTop: 1.2em;
 
@@ -19,7 +20,7 @@ $ease: cubic-bezier(0.770, 0.00, 0.175, 1.000);
   border: 1px solid $md-blue-grey-50;
   height: 2.8em;
 
-  :focus{
+  :focus {
     border-bottom: 1px solid $labelTextColor;
   }
 
@@ -32,9 +33,22 @@ $ease: cubic-bezier(0.770, 0.00, 0.175, 1.000);
     position: absolute;
     border: none;
     padding: $formPadding;
-    font-size:$fontSizeForm;
+    font-size: $fontSizeForm;
     border-radius: 0;
     outline: none;
+    top: 1.2em;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  select {
+    appearance: none;
+    outline: none;
+    display: block;
+    position: absolute;
+    border: none;
+    padding: $formPadding;
+    font-size: $fontSizeForm;
     top: 1.2em;
     box-sizing: border-box;
     width: 100%;
@@ -55,7 +69,7 @@ $ease: cubic-bezier(0.770, 0.00, 0.175, 1.000);
     animation-timing-function: $ease;
   }
 
-  input:focus + label , input:valid + label {
+  input:focus + label {
     animation-name: nth($animations, 2);
     animation-duration: $animationTime;
     animation-direction: normal;
@@ -63,8 +77,15 @@ $ease: cubic-bezier(0.770, 0.00, 0.175, 1.000);
     animation-timing-function: $ease;
   }
 
-
-
+  &.valid  {
+    label {
+      animation-name: nth($animations, 2);
+      animation-duration: $animationTime;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+      animation-timing-function: $ease
+    }
+  }
 }
 
 @each $animationName in $animations {
